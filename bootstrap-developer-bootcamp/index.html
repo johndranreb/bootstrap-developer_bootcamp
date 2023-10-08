@@ -6,6 +6,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
   <title>Frontend Bootcamp</title>
 </head>
 <body>
@@ -282,6 +283,47 @@
     </div>
   </section>
 
+  <!-- Contact & Map -->
+  <section class="p-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md">
+          <h2 class="text-center mb-4">Contact Info</h2>
+          <ul class="list-group list-group-flush lead">
+            <li class="list-group-item">
+              <span class="fw-bold">
+               Location:
+              </span>123 Baguio City, Philippines
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold">
+                Phone:
+              </span>+63 9123456789
+            </li>
+            <li class="list-group-item">
+              <span class="fw-bold">
+                Email:
+              </span>info@developerbootcamp.com
+            </li>
+          </ul>
+        </div>
+        <div class="col-md">
+            <div id="map"></div>
+        </div>
+      </div>
+    </div>
+  </section>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+  <script>
+    L.mapquest.key = 'PdubjyExap4380h8QPmcehiKLFVZpBSv';
+
+    // 'map' refers to a <div> element with the ID map
+    L.mapquest.map('map', {
+        center: [37.7749, -122.4194],
+        layers: L.mapquest.tileLayer('map'),
+        zoom: 12
+    });
+</script>
 </body>
 </html>
